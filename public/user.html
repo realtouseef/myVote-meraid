@@ -1,154 +1,199 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="../../favicon.ico" />
 
-    <title>Voting App</title>
+  <title>Voting App</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link
+    href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
-    <!-- Custom styles for this template -->
-    <link href="public/styles/narrow-jumbotron.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/public/styles/narrow-jumbotron.css" rel="stylesheet" />
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="header clearfix">
-            <nav>
-                <ul class="nav nav-pills float-right">
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-hello" href="#">Hello</a>
-                    </li>
-                    <li class="nav-item" id="nav-settings">
-                        <a class="nav-link" href="#">Change Password</a>
-                    </li>
-                    <li class="nav-item" id="nav-logout">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                </ul>
-            </nav>
-            <h3 class="text-muted">MyVote</h3>
-        </div>
-
-
-        <div class="jumbotron">
-            <h1 class="display-3">MyVote</h1>
-            <p class="lead">MyVote is a web-based application that enables you to create ranking, rating, and poll voting contests and view
-                the results in real time. Your audience can participate live on their mobile phones, tablets and desktops.
-                There is nothing to download or install.</p>
-            <a class="btn btn-md btn-success" id="new-poll" href="#" role="button">New Poll</a>
-            <a class="btn btn-md btn-info" id="my-polls" href="#" role="button">My Polls</a>
-
-        </div>
-
-
-        <!-- new poll -->
-        <div class="container" id='new-poll-container'>
-            <h3>New Poll</h3>
-            <form id="new-poll-form">
-
-                <div class="form-group">
-                    <label for="name">Question</label>
-                    <input type="text" class="form-control" id="name" name="name">
-                </div>
-                <div class="form-group option-group">
-                    <label for="pwd">Options:</label>
-                    <input type="text" class="form-control option" placeholder="Option A">
-                    <input type="text" class="form-control option" placeholder="Option B">
-                </div>
-                <button type="button" id="more-options" class="btn btn-default">More Options</button>
-                <button type="submit" id="submit" class="btn btn-primary btn-default">Submit</button>
-
-            </form>
-        </div>
-
-        <!-- vote container -->
-        <div class="container" id='vote-container'>
-            <h3 id="vote-question">Who is the blah of blah when blah was blah</h3>
-            <br>
-            <form id="vote-form">
-                <div id="vote-options">
-
-                </div>
-                <br>
-                <button type="submit" id="vote" class="btn btn-primary btn-default">Vote</button>
-
-            </form>
-        </div>
-
-        <!-- My polls -->
-
-        <div class="container" id="my-polls-container">
-            <div class="list-group" id="my-polls-list">
-
-            </div>
-        </div>
-
-        <div class="container" id="change-password-container">
-            <form id="change-password-form">
-
-                <div class="form-group">
-                    <label for="pwd">Current Password:</label>
-                    <input type="password" class="form-control" id="current-password" name="current-password">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">New Password:</label>
-                    <input type="password" class="form-control" id="new-password" name="new-password">
-                </div>
-                <button type="submit" id="save-changes" class="btn btn-primary">Save changes</button>
-            </form>
-        </div>
-
-        <!-- chart container -->
-
-        <div class="container" id="chart-container">
-        </div>
-
-
-
-
-        <div class="text-center center-block" style="margin-top:100px;">
-                <footer class="footer center-block">
-        
-                    <p>Copyright &copy; Anshuman Agrawal 2018<p>
-                    <hr>
-                    <div class="text-center center-block">
-                        <p class="txt-railway">- anshuagrawal2791.github.io -</p>
-                        <br />
-                        <a href="https://www.facebook.com/anshuagrawal2791" target="_blank">
-                            <i id="social-fb" class="fa fa-facebook-square fa-2x social" ></i>
-                        </a>
-                        <a href="https://github.com/anshuagrawal2791" target="_blank">
-                            <i id="social-tw" class="fa fa-github-square fa-2x social"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/anshuman-agrawal-56a12580/" target="_blank">
-                            <i id="social-gp" class="fa fa-linkedin-square fa-2x social"></i>
-                        </a>
-                        <a href="mailto:anshuagrawal2791@gmail.com" target="_blank">
-                            <i id="social-em" class="fa fa-envelope-square fa-2x social"></i>
-                        </a>
-                    </div>
-                    <hr>
-                </footer>
-            </div>
-
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a class="nav-link" id="nav-hello" href="#">Hello</a>
+          </li>
+          <!-- <li class="nav-item" id="nav-settings">
+            <a class="nav-link" href="#">Change Password</a>
+          </li> -->
+          <li class="nav-item" id="nav-logout">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">MyVote</h3>
     </div>
-    <!-- /container -->
 
-    <!-- Bootstrap core JavaScript
+    <div class="jumbotron">
+      <h1 class="display-3">MyVote</h1>
+      <p class="lead">
+        MyVote is a web-based application that enables you to create ranking,
+        rating, and poll voting contests and view the results in real time. Your
+        audience can participate live on their mobile phones, tablets and
+        desktops. There is nothing to download or install.
+      </p>
+      <a class="btn btn-md btn-success" id="new-poll" href="#" role="button"
+        >New Poll</a
+      >
+      <a class="btn btn-md btn-info" id="my-polls" href="#" role="button"
+        >My Polls</a
+      >
+    </div>
+
+    <!-- new poll -->
+    <div class="container" id="new-poll-container">
+      <h3>New Poll</h3>
+      <form id="new-poll-form">
+        <div class="form-group">
+          <label for="name">Question</label>
+          <input type="text" class="form-control" id="name" name="name" />
+        </div>
+        <div class="form-group option-group">
+          <label for="pwd">Options:</label>
+          <input
+            type="text"
+            class="form-control option"
+            placeholder="Option A"
+          />
+          <input
+            type="text"
+            class="form-control option"
+            placeholder="Option B"
+          />
+        </div>
+        <button type="button" id="more-options" class="btn btn-default">
+          More Options
+        </button>
+        <button type="submit" id="submit" class="btn btn-primary btn-default">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <!-- vote container -->
+    <!-- <div class="container" id="vote-container">
+      <h3 id="vote-question">Who is the blah of blah when blah was blah</h3>
+      <br />
+      <form id="vote-form">
+        <div id="vote-options"></div>
+        <br />
+        <button type="submit" id="vote" class="btn btn-primary btn-default">
+          Vote
+        </button>
+      </form>
+    </div> -->
+
+    <!-- My polls -->
+
+    <div class="container" id="my-polls-container">
+      <div class="list-group" id="my-polls-list"></div>
+    </div>
+
+    <!-- <div class="container" id="change-password-container">
+      <form id="change-password-form">
+        <div class="form-group">
+          <label for="pwd">Current Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="current-password"
+            name="current-password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pwd">New Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="new-password"
+            name="new-password"
+          />
+        </div>
+        <button type="submit" id="save-changes" class="btn btn-primary">
+          Save changes
+        </button>
+      </form>
+    </div> -->
+
+    <!-- chart container -->
+
+    <div class="container" id="chart-container"></div>
+
+    <div class="text-center center-block" style="margin-top: 100px">
+      <footer class="footer center-block">
+        <p>Copyright &copy; Anshuman Agrawal 2018</p>
+        <p></p>
+        <hr />
+        <div class="text-center center-block">
+          <p class="txt-railway">- anshuagrawal2791.github.io -</p>
+          <br />
+          <a href="https://www.facebook.com/anshuagrawal2791" target="_blank">
+            <i id="social-fb" class="fa fa-facebook-square fa-2x social"></i>
+          </a>
+          <a href="https://github.com/anshuagrawal2791" target="_blank">
+            <i id="social-tw" class="fa fa-github-square fa-2x social"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anshuman-agrawal-56a12580/"
+            target="_blank"
+          >
+            <i id="social-gp" class="fa fa-linkedin-square fa-2x social"></i>
+          </a>
+          <a href="mailto:anshuagrawal2791@gmail.com" target="_blank">
+            <i id="social-em" class="fa fa-envelope-square fa-2x social"></i>
+          </a>
+        </div>
+        <hr />
+      </footer>
+    </div>
+  </div>
+  <!-- /container -->
+
+  <!-- Bootstrap core JavaScript
         ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"
+    type="text/javascript"
+  ></script>
+  <script
+    src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    type="text/javascript"
+  ></script>
+  <script
+    src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"
+    type="text/javascript"
+  ></script>
 
-    <script src="/socket.io/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const logoutButton = document.getElementById('nav-logout');
+
+    logoutButton.addEventListener('click', () => {
+      localStorage.clear();
+      window.location.href = '/';
+    });
+  </script>
 </body>

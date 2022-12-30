@@ -13,29 +13,33 @@ const io = require('socket.io')(server);
 require('dotenv').load();
 require('./app/config/passport.js')(passport);
 
-mongoose.connect(process.env.MONGO_URI);
-mongoose.Promise = global.Promise;
+try {
+  mongoose.connect(process.env.MONGO_URI, () => {
+    console.log('Database connection established');
+  });
+  mongoose.Promise = global.Promise;
+} catch (error) {
+  handleError(error);
+}
 
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/common', express.static(process.cwd() + '/app/common'));
-app.use(bodyParser.urlencoded({extended:false}));
-app.set('view engine','ejs');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.set('view engine', 'ejs');
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
 var port = process.env.PORT || 3000;
-server.listen(port,  function () {
-	console.log('Node.js listening on port ' + port + '...');
+server.listen(port, function () {
+  console.log('Node.js listening on port ' + port + '...');
 });
-routes(app, passport,io);
-io.on('connection',function(socket){
-	
-	socket.emit('greeting',{hi:'name'});
-	console.log('------------------- io connected');
+routes(app, passport, io);
+io.on('connection', function (socket) {
+  socket.emit('greeting', { hi: 'name' });
+  console.log('------------------- io connected');
 
-	socket.on("disconnect", () => console.log("Client disconnected"));
+  socket.on('disconnect', () => console.log('Client disconnected'));
 });

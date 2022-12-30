@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anshuagrawal2791/voting-app.git"
+    "url": "git+https://github.com/realtouseef/myVote-meraid.git"
   },
   "keywords": [
     "voting-app",
@@ -20,16 +20,19 @@
   "author": "Anshuman Agrawal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anshuagrawal2791/voting-app/issues"
+    "url": "https://github.com/realtouseef/myVote-meraid.git/issues"
   },
-  "homepage": "https://github.com/anshuagrawal2791/voting-app#readme",
+  "homepage": "https://github.com/realtouseef/myVote-meraid.git#readme",
   "dependencies": {
+    "axios": "^1.2.2",
     "csprng": "^0.1.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "fetch": "^1.1.0",
     "jsonwebtoken": "^8.1.0",
-    "mongoose": "^4.13.9",
+    "mongoose": "^6.8.2",
+    "node-fetch": "^3.3.0",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
     "passport-google-oauth": "^1.0.0",

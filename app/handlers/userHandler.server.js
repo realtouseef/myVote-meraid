@@ -47,13 +47,18 @@ function UserHandler(passport) {
     //   .digest('hex');
 
     try {
+      const searchUser = await Users.findOne({ userId: userId });
+      if (searchUser) {
+        const token = jwt.sign(searchUser.userId, process.env.JWT_KEY);
+        if (!searchUser) return res.send(err);
+        res.json({ token: token });
+      }
       const newUser = new Users({
         name,
         userId,
         // salt: temp,
         // name: req.body.name
       });
-
       const user = await Users.findOne({ userId: newUser.userId });
 
       const token = jwt.sign(newUser.id, process.env.JWT_KEY);
@@ -61,7 +66,6 @@ function UserHandler(passport) {
         console.log('sending file');
         // res.sendFile(path + '/public/user.html');
         // res.json({ response: 'User already Registered', res: false });
-
         // TODO:
         // if user not created, create a user and login
         // if user available in db, simply login

@@ -40,18 +40,14 @@ module.exports = function (app, passport, io) {
 
   //   app.post('/signup', require('./auth/signup'));
 
-  app.route('/signup').post((req, res) => {
-    userHandler.addUser(req, res);
-  });
+  // app.route('/signup').post((req, res) => {
+  //   userHandler.addUser(req, res);
+  // });
 
   app.post(
-    '/login',
-    passport.authenticate('local', { session: false }),
-    function (req, res) {
-      const token = jwt.sign(req.user, process.env.JWT_KEY);
-      if (!req.user) return res.send(err);
-      res.json({ token: token });
-    }
+    '/auth/login',
+    // passport.authenticate('local', { session: false }),
+    require('./auth/login')
   );
 
   app.route('/logout').get(function (req, res) {

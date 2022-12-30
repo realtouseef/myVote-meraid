@@ -436,26 +436,27 @@ $(document).ready(function () {
 
   login_form.submit((e) => {
     e.preventDefault();
-
-    $.post('/login', login_form.serialize(), (data) => {
-      console.log(data);
-      localStorage.setItem('token', data.token);
-      console.log('data.token', data.token);
-      window.location.href = baseURI;
+    $.post('/auth/login', login_form.serialize(), (response) => {
+      if (response.status == 'success') {
+        localStorage.setItem('token', response.data.token);
+        window.location.href = baseURI + '/public/user.html';
+      } else {
+        alert(response.msg);
+      }
     });
   });
 
-  signup_form.submit((e) => {
-    e.preventDefault();
+  // signup_form.submit((e) => {
+  //   e.preventDefault();
 
-    $.post('/signup', signup_form.serialize(), (data) => {
-      console.log(data);
-      localStorage.clear();
-      localStorage.setItem('token', data.token);
-      console.log(data.token);
-      window.location.href = baseURI;
-    });
-  });
+  //   $.post('/signup', signup_form.serialize(), (data) => {
+  //     console.log(data);
+  //     localStorage.clear();
+  //     localStorage.setItem('token', data.token);
+  //     console.log(data.token);
+  //     window.location.href = baseURI;
+  //   });
+  // });
 });
 var setSelected = (e) => {
   this.childNodes[0].html('<span class="sr-only">(current)');
